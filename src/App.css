@@ -1,0 +1,15 @@
+.App{
+  background-color: #000;
+  min-height: 100vh;
+  padding-top: 3rem;
+}
+
+.ImageContainer{
+  background-repeat: no-repeat;
+  background-color: aliceblue;
+  background-size: cover;
+  width: 70%;
+  margin: 0 auto;
+  min-height: 70vh;
+  border-radius: 4px;
+}
