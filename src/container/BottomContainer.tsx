@@ -24,7 +24,6 @@ const BottomContainer: React.FC<BottomContainerProps> = (props) => {
 
   return (
     <Root
-      className="bottomContainerMain"
       sx={{
         backgroundColor: "#000",
         display: "flex",
