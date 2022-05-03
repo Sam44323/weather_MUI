@@ -98,7 +98,7 @@ const TopContainer: React.FC = () => {
               marginLeft: "4px",
             }}
           >
-            Humidity: 30°C
+            Humidity: 30
           </Typography>
         </Box>
       </Box>
