@@ -34,7 +34,7 @@ const App: React.FC = () => {
       <div
         className="ImageContainer"
         style={{
-          backgroundImage: `url(${getBgImage("rain")})`,
+          backgroundImage: `url(${getBgImage("sunny")})`,
         }}
       >
         <TopContainer />
