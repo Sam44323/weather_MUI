@@ -65,7 +65,7 @@ yarn install
 :
 
 ```bash
-yarn dev
+yarn start
 ```
 
 ---
@@ -75,15 +75,6 @@ yarn dev
 
 ```bash
 yarn build
-```
-
----
-
-**Run the build-client**
-:
-
-```bash
-yarn start
 ```
 
 ---
