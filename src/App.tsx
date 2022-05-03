@@ -20,13 +20,13 @@ const App: React.FC = () => {
 
   const getBgImage = (value: string = "cloud") => {
     switch (value) {
-      case "cloud":
+      case "clouds":
         return Cloud;
       case "rain":
         return Rain;
       case "snow":
         return Snow;
-      case "sunny":
+      case "clear":
         return Sunny;
       default:
         return Cloud;
@@ -42,12 +42,16 @@ const App: React.FC = () => {
     setCurrData(data.length ? data[0] : Data[0]);
   };
 
+  console.log(currData.weather[0].main.toLowerCase());
+
   return (
     <div className="App">
       <div
         className="ImageContainer"
         style={{
-          backgroundImage: `url(${getBgImage("sunny")})`,
+          backgroundImage: `url(${getBgImage(
+            currData.weather[0].main.toLowerCase()
+          )})`,
         }}
       >
         <Box
@@ -74,8 +78,21 @@ const App: React.FC = () => {
             />
           </Button>
         </Box>
-        <TopContainer />
-        <BottomContainer />
+        <TopContainer
+          location={currData.name}
+          status={currData.weather[0].description}
+          temp={parseFloat(currData.main.temp)}
+          pressure={currData.main.pressure}
+          humidity={currData.main.humidity}
+        />
+        <BottomContainer
+          temp={parseFloat(currData.main.temp)}
+          pressure={currData.main.pressure}
+          humidity={currData.main.humidity}
+          max_temp={currData.main.temp_max}
+          min_temp={currData.main.temp_min}
+          air={currData.wind.speed}
+        />
       </div>
     </div>
   );

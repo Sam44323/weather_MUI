@@ -2,7 +2,15 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { Compress, Thermostat } from "@mui/icons-material";
 
-const TopContainer: React.FC = () => {
+interface TopContainerData {
+  location: string;
+  status: string;
+  temp: number;
+  pressure: number;
+  humidity: number;
+}
+
+const TopContainer: React.FC<TopContainerData> = (props) => {
   return (
     <Box
       sx={{
@@ -25,13 +33,17 @@ const TopContainer: React.FC = () => {
             variant="h4"
             sx={{ textAlign: "center", fontWeight: "600" }}
           >
-            Warsaw
+            {props.location}
           </Typography>
           <Typography
             variant="h6"
-            sx={{ textAlign: "center", fontWeight: "600" }}
+            sx={{
+              textAlign: "center",
+              fontWeight: "600",
+              textTransform: "capitalize",
+            }}
           >
-            Broken Clouds
+            {props.status}
           </Typography>
         </Box>
         <Box className="tempContainer">
@@ -44,7 +56,7 @@ const TopContainer: React.FC = () => {
               fontWeight: "bold",
             }}
           >
-            5°C
+            {(props.temp - 273.15).toFixed(1)}°C
           </Typography>
         </Box>
       </Box>
@@ -77,7 +89,7 @@ const TopContainer: React.FC = () => {
               marginLeft: "4px",
             }}
           >
-            Pressure: 1000
+            Pressure: {props.pressure}
           </Typography>
         </Box>
         <Box
@@ -98,7 +110,7 @@ const TopContainer: React.FC = () => {
               marginLeft: "4px",
             }}
           >
-            Humidity: 30
+            Humidity: {props.humidity}°C
           </Typography>
         </Box>
       </Box>

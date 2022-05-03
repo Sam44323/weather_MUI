@@ -4,7 +4,16 @@ import { Box } from "@mui/material";
 // components
 import Value from "../components/BottomContainer/Value";
 
-const BottomContainer: React.FC = () => {
+interface BottomContainerProps {
+  temp: number;
+  min_temp: number;
+  pressure: number;
+  max_temp: number;
+  humidity: number;
+  air: number;
+}
+
+const BottomContainer: React.FC<BottomContainerProps> = (props) => {
   return (
     <Box
       sx={{
@@ -20,11 +29,21 @@ const BottomContainer: React.FC = () => {
         padding: "1.4rem 1rem",
       }}
     >
-      <Value value={1000} text="Pressure" icon="pressure" showRight />
-      <Value value={30} text="Min" icon="temp" showRight />
-      <Value value={70} text="Max" icon="temp" showRight />
-      <Value value={40} text="Humidity" icon="temp" showRight />
-      <Value value={1.34} text="Humidity" icon="air" showRight={false} />
+      <Value value={props.pressure} text="Pressure" icon="pressure" showRight />
+      <Value
+        value={(props.min_temp - 273.15).toFixed(1)}
+        text="Min"
+        icon="temp"
+        showRight
+      />
+      <Value
+        value={(props.max_temp - 273.15).toFixed(1)}
+        text="Max"
+        icon="temp"
+        showRight
+      />
+      <Value value={props.humidity} text="Humidity" icon="temp" showRight />
+      <Value value={props.air} text="Wind" icon="air" showRight={false} />
     </Box>
   );
 };
