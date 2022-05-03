@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { Input } from "@mui/material";
 import { Search } from "@mui/icons-material";
 import "./App.css";
@@ -33,6 +33,15 @@ const App: React.FC = () => {
     }
   };
 
+  const getWeatherData = () => {
+    const data = Data.filter(
+      (item: any) => item.name.toLowerCase() === searchData.toLowerCase()
+    );
+    console.log(data);
+    setSearchData("");
+    setCurrData(data.length ? data[0] : Data[0]);
+  };
+
   return (
     <div className="App">
       <div
@@ -53,13 +62,17 @@ const App: React.FC = () => {
               border: "none",
               width: "30%",
             }}
+            value={searchData}
+            onChange={(e) => setSearchData(e.target.value)}
             placeholder="City Name"
           />
-          <Search
-            sx={{
-              color: "white",
-            }}
-          />
+          <Button onClick={getWeatherData}>
+            <Search
+              sx={{
+                color: "white",
+              }}
+            />
+          </Button>
         </Box>
         <TopContainer />
         <BottomContainer />
