@@ -34,7 +34,7 @@ const App: React.FC = () => {
       <div
         className="ImageContainer"
         style={{
-          backgroundImage: `url(${getBgImage(currData.weather[0].main)})`,
+          backgroundImage: `url(${getBgImage("rain")})`,
         }}
       >
         <TopContainer />
