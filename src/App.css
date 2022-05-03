@@ -7,3 +7,10 @@
   min-height: 70vh;
   border-radius: 4px;
 }
+
+.rightDiv{
+  width: 1px;
+  height: 100%;
+  background-color: #fff;
+margin-left: 10px;
+}
