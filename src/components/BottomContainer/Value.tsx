@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { styled, Typography } from "@mui/material";
 import { Compress, Thermostat, Air } from "@mui/icons-material";
 
 interface ValueProps {
@@ -47,8 +47,17 @@ const Value: React.FC<ValueProps> = (props) => {
     }
   };
 
+  const Root = styled("div")(({ theme }) => ({
+    padding: theme.spacing(1),
+    [theme.breakpoints.down("md")]: {
+      margin: "1rem 0",
+      border: "1px solid #fff",
+      borderRadius: "4px",
+    },
+  }));
+
   return (
-    <Box
+    <Root
       sx={{
         display: "flex",
         alignItems: "center",
@@ -67,7 +76,7 @@ const Value: React.FC<ValueProps> = (props) => {
         {props.icon === "temp" ? "°C" : props.icon === "air" ? "m/s" : ""}
       </Typography>
       {props.showRight && <div className="rightDiv"></div>}
-    </Box>
+    </Root>
   );
 };
 

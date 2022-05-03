@@ -16,18 +16,12 @@
   justify-content: center;
 }
 
-@media (max-width: 1199px){
-  .ImageContainer{
-    width: 100%;
-    height: 100vh;
-  }
-}
 
 .rightDiv{
   width: 1px;
   height: 100%;
   background-color: #fff;
-margin-left: 10px;
+  margin-left: 10px;
 }
 
 .topContainer{
@@ -46,7 +40,25 @@ margin-left: 10px;
   border-radius: 10px;
 }
 
+.bottomContainerMain {
+    background-color: "#000";
+    display: "flex";
+    flex-wrap: "wrap";
+    justify-content: "space-around";
+    opacity: 0.8;
+    width: 80%;
+    margin: "0 auto";
+    margin-top: "2.4rem";
+    border-radius: "4px";
+    padding: "1.4rem 1rem";
+}
+
 @media (max-width: 1199px){
+  .ImageContainer {
+    width: 100%;
+    height: 100vh;
+  }
+
   .subDataItem{
     margin: 0.4rem 0;
   }

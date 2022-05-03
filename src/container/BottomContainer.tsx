@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { styled } from "@mui/material";
 
 // components
 import Value from "../components/BottomContainer/Value";
@@ -14,8 +14,17 @@ interface BottomContainerProps {
 }
 
 const BottomContainer: React.FC<BottomContainerProps> = (props) => {
+  const Root = styled("div")(({ theme }) => ({
+    padding: theme.spacing(1),
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
+  }));
+
   return (
-    <Box
+    <Root
+      className="bottomContainerMain"
       sx={{
         backgroundColor: "#000",
         display: "flex",
@@ -44,7 +53,7 @@ const BottomContainer: React.FC<BottomContainerProps> = (props) => {
       />
       <Value value={props.humidity} text="Humidity" icon="temp" showRight />
       <Value value={props.air} text="Wind" icon="air" showRight={false} />
-    </Box>
+    </Root>
   );
 };
 
