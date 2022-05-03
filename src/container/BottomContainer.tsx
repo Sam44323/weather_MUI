@@ -10,6 +10,7 @@ const BottomContainer: React.FC = () => {
       sx={{
         backgroundColor: "#000",
         display: "flex",
+        flexWrap: "wrap",
         justifyContent: "space-around",
         opacity: 0.8,
         width: "80%",
