@@ -54,18 +54,8 @@ const App: React.FC = () => {
           )})`,
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            paddingTop: "1.4rem",
-          }}
-        >
+        <Box className="inputContainer">
           <Input
-            sx={{
-              border: "none",
-              width: "30%",
-            }}
             value={searchData}
             onChange={(e) => setSearchData(e.target.value)}
             placeholder="City Name"
@@ -73,7 +63,7 @@ const App: React.FC = () => {
           <Button onClick={getWeatherData}>
             <Search
               sx={{
-                color: "white",
+                color: "black",
               }}
             />
           </Button>

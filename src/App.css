@@ -7,7 +7,20 @@
   min-height: 70vh;
   border-radius: 4px;
   max-width: 1200px;
-  
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+  padding-top: 30px;
+  justify-content: center;
+}
+
+@media (max-width: 1199px){
+  .ImageContainer{
+    width: 100%;
+    height: 100vh;
+  }
 }
 
 .rightDiv{
@@ -15,4 +28,31 @@
   height: 100%;
   background-color: #fff;
 margin-left: 10px;
+}
+
+.topContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.topContainerSubData{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: "#fff";
+  border-radius: 10px;
+}
+
+@media (max-width: 1199px){
+  .subDataItem{
+    margin: 0.4rem 0;
+  }
+  .topContainerSubData {
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+  }
 }

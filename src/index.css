@@ -6,3 +6,9 @@ body {
   min-height: 100vh;
   padding-top: 3rem;
 }
+
+@media (max-width: 1199px){
+  body{
+    padding: 0;
+  }
+}

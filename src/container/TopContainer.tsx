@@ -12,15 +12,7 @@ interface TopContainerData {
 
 const TopContainer: React.FC<TopContainerData> = (props) => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        color: "#000",
-        alignItems: "center",
-        paddingLeft: "1rem",
-      }}
-    >
+    <Box className="topContainer">
       <Box
         sx={{
           display: "flex",
@@ -61,17 +53,14 @@ const TopContainer: React.FC<TopContainerData> = (props) => {
         </Box>
       </Box>
       <Box
+        className="topContainerSubData"
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#000",
           color: "#fff",
           padding: "0.4rem 1rem",
-          borderRadius: "10px",
         }}
       >
         <Box
+          className="subDataItem"
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -93,6 +82,7 @@ const TopContainer: React.FC<TopContainerData> = (props) => {
           </Typography>
         </Box>
         <Box
+          className="subDataItem"
           sx={{
             display: "flex",
             justifyContent: "center",
